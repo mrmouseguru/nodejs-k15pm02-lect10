@@ -31,5 +31,7 @@ export default class App {
 
     let student2 = await Student.load("knazir");
     console.log("student2" , student2);
+    let courses = await student2.listCourses();
+    console.log("Courses" , courses);
   }
 }
