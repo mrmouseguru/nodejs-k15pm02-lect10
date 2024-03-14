@@ -28,5 +28,8 @@ export default class App {
 
     let student = new Student(json);
     console.log(student);
+
+    let student2 = await Student.load("knazir");
+    console.log("student2" , student2);
   }
 }
