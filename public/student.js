@@ -19,4 +19,20 @@ export default class Student {
     let json = await res.json();
     return json.courses;
   }
+
+  async declare(deptCode){
+    let body = { dept : deptCode};
+    let res = await fetch(this._uri, {
+      method: "PATCH",
+      headers: {"Content-Type" : "application/json"},
+      body: JSON.stringify(body) // "string K : V"
+    });
+
+    let json = await res.json();
+    if(res.status !== 200){
+      throw new Error(json.error);
+    }
+
+    this.dept = json.dept;
+  }
 }

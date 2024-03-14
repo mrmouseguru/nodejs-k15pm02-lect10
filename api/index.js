@@ -50,7 +50,7 @@ api.get("/students/:id", (req, res) => {
   let student = STUDENTS[req.params.id];
   res.json(student);
 });
-
+//PATCH: /api/students/mchang
 api.patch("/students/:id", (req, res) => {
   let student = STUDENTS[req.params.id];
   if ("dept" in req.body) {
